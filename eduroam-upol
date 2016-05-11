@@ -1,0 +1,16 @@
+# Configuration for netctl profile for Palacky University Olomouc
+# 2016 by Jakub Bortlík <jakub.bortlik@gmail.com>
+Description="eduroam-upol"
+Connection='wireless'
+Interface='<NETWORK INTERFACE>' # e.g. wlp12s0, find out via "ip link"
+Security='wpa-configsection'
+IP='dhcp'
+WPAConfigSection=(
+    'ssid="eduroam"'
+    'key_mgmt=WPA-EAP'
+    'eap=PEAP'
+    'proto=WPA2'
+    'phase2="auth=MSCHAPv2"'
+    'identity="<YOUR-PORTAL-LOGIN>@upol.cz"'
+    'password="<YOUR-SECRET>"' # set in portal.upol.cz/wps/myportal/EditMyProfile
+)
